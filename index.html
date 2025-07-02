@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pod Descartável Ignite V50 5000 Puffs - Cigarro Eletrônico Shop</title>
+    <title>Pod Descartável Ignite V50 5000 Puffs - Cigarro Eletrônico Online</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -298,6 +298,28 @@
 
         .product-actions .buy-button:hover {
             background-color: var(--button-blue-hover);
+        }
+
+        /* New style for more products call to action */
+        .more-products-call-to-action-link {
+            display: block; /* Make it a block element to fill the space */
+            text-align: center;
+            margin-top: 30px;
+            padding: 15px;
+            background-color: #e6f7ff; /* Light blue background */
+            border: 1px solid var(--button-blue);
+            border-radius: 8px;
+            font-size: 1.1em;
+            font-weight: 600;
+            color: var(--button-blue);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .more-products-call-to-action-link:hover {
+            background-color: #cce7f0; /* Slightly darker blue on hover */
+            transform: translateY(-2px); /* Subtle lift effect */
         }
 
         /* Product Description Tabs */
@@ -708,7 +730,7 @@
         }
 
         .modal-content {
-            background-color: #fefefe;
+            background-color: #f0f0f0; /* Tonalidade suave de cinza */
             margin: auto;
             padding: 30px;
             border-radius: 10px;
@@ -850,7 +872,7 @@
         </div>
         <div class="container header-content">
             <div class="header-left">
-                <div class="header-logo">cigarroeletronicoo.online</div>
+                <div class="header-logo">cigarroeletronico.online</div>
                 <div class="site-credibility-badges">
                     <span class="credibility-badge">✅ SITE SEGURO</span>
                     <span class="credibility-badge">✅ PRODUTOS ORIGINAIS</span>
@@ -877,23 +899,17 @@
     <main class="container product-page">
         <section class="product-gallery">
             <div class="thumbnails">
-                <!-- Por favor, insira o link da sua primeira imagem em miniatura do Pod Ignite V50 aqui -->
-                <div class="thumbnail-item"><img src="https://i.imgur.com/UkDlPib.jpeg" alt="Ignite V50 Thumbnail 1"></div>
-                <!-- Por favor, insira o link da sua segunda imagem em miniatura do Pod Ignite V50 aqui -->
-                <div class="thumbnail-item"><img src="https://i.imgur.com/uy2LICo.jpeg" alt="Ignite V50 Thumbnail 2"></div>
-                <!-- Por favor, insira o link da sua terceira imagem em miniatura do Pod Ignite V50 aqui -->
-                <div class="thumbnail-item"><img src="https://i.imgur.com/X1QQS3O.jpeg" alt="Ignite V50 Thumbnail 3"></div>
-                <!-- Por favor, insira o link da sua quarta imagem em miniatura do Pod Ignite V50 aqui -->
-                <div class="thumbnail-item"><img src="https://i.imgur.com/pestkgQ.jpeg" alt="Ignite V50 Thumbnail 4"></div>
-                <!-- Por favor, insira o link da sua quinta imagem em miniatura do Pod Ignite V50 aqui -->
-                <div class="thumbnail-item"><img src="https://i.imgur.com/7IwL8pA.jpeg" alt="Ignite V50 Thumbnail 5"></div>
-                <!-- Por favor, insira o link da sua sexta imagem em miniatura do Pod Ignite V50 aqui -->
-                <div class="thumbnail-item"><img src="https://i.imgur.com/u9v6giH.jpeg" alt="Ignite V50 Thumbnail 6"></div>
-                <!-- Por favor, insira o link da sua sétima imagem em miniatura do Pod Ignite V50 aqui -->
-                <div class="thumbnail-item"><img src="https://i.imgur.com/Jyqor4A.jpeg" alt="Ignite V50 Thumbnail 7"></div>
+                <!-- Miniaturas com URLs fornecidas pelo usuário -->
+                <div class="thumbnail-item"><img src="https://i.imgur.com/UkDlPib.jpeg" alt="Ignite V50 Thumbnail 1" onerror="this.onerror=null;this.src='https://placehold.co/70x70/cccccc/333333?text=Erro';"></div>
+                <div class="thumbnail-item"><img src="https://i.imgur.com/X1QQS3O.jpeg" alt="Ignite V50 Thumbnail 2" onerror="this.onerror=null;this.src='https://placehold.co/70x70/cccccc/333333?text=Erro';"></div>
+                <div class="thumbnail-item"><img src="https://i.imgur.com/pestkgQ.jpeg" alt="Ignite V50 Thumbnail 3" onerror="this.onerror=null;this.src='https://placehold.co/70x70/cccccc/333333?text=Erro';"></div>
+                <div class="thumbnail-item"><img src="https://i.imgur.com/7IwL8pA.jpeg" alt="Ignite V50 Thumbnail 4" onerror="this.onerror=null;this.src='https://placehold.co/70x70/cccccc/333333?text=Erro';"></div>
+                <div class="thumbnail-item"><img src="https://i.imgur.com/u9v6giH.jpeg" alt="Ignite V50 Thumbnail 5" onerror="this.onerror=null;this.src='https://placehold.co/70x70/cccccc/333333?text=Erro';"></div>
+                <div class="thumbnail-item"><img src="https://i.imgur.com/Jyqor4A.jpeg" alt="Ignite V50 Thumbnail 6" onerror="this.onerror=null;this.src='https://placehold.co/70x70/cccccc/333333?text=Erro';"></div>
+                <div class="thumbnail-item"><img src="https://i.imgur.com/uy2LICo.jpeg" alt="Ignite V50 Thumbnail 7" onerror="this.onerror=null;this.src='https://placehold.co/70x70/cccccc/333333?text=Erro';"></div>
             </div>
             <div class="main-image">
-                <!-- Por favor, insira o link da sua imagem principal do Pod Ignite V50 aqui -->
+                <!-- Imagem principal -->
                 <img id="mainProductImage" src="https://i.imgur.com/UkDlPib.jpeg" alt="Pod Descartável Ignite V50 5000 Puffs - Imagem Principal" onerror="this.onerror=null;this.src='https://placehold.co/600x400/cccccc/333333?text=Imagem+Nao+Carregada';this.alt='Imagem principal do produto não carregada';">
             </div>
         </section>
@@ -933,6 +949,10 @@
                         data-product-price="R$59,90">COMPRAR</button>
                 <!-- O botão "COMPRE VIA WHATSAPP" foi removido daqui -->
             </div>
+            <!-- Adicionada chamada para mais produtos, agora clicável -->
+            <a href="#related-products" class="more-products-call-to-action-link">
+                Explore mais opções de produtos incríveis abaixo!
+            </a>
 
             <!-- As opções de "CUPOM DE DESCONTO" e "CALCULE O FRETE COM SEU CEP" foram removidas daqui -->
         </section>
@@ -1041,7 +1061,7 @@
         </div>
     </section>
 
-    <section class="related-products">
+    <section id="related-products" class="related-products">
         <div class="container">
             <h2>Produtos relacionados</h2>
             <div class="product-grid">
@@ -1117,7 +1137,7 @@
                     </form>
                 </div>
                 <div class="footer-logo-description">
-                    <div class="footer-logo">cigarroeletronicoo.online</div>
+                    <div class="footer-logo">cigarroeletronico.online</div>
                     <p>Sua loja de confiança para cigarros eletrônicos e acessórios.</p>
                 </div>
                 <div class="footer-links">
@@ -1132,7 +1152,7 @@
                 <div class="footer-contact">
                     <h4>CONTATO</h4>
                     <ul>
-                        <li class="contact-item"><span class="icone-mail"></span> contato@cigarroeletronicoo.online</li>
+                        <li class="contact-item"><span class="icone-mail"></span> contato@cigarroeletronico.online</li>
                         <li class="contact-item"><span class="icone-whatsapp"></span> (11) 98765-4321</li>
                         <li class="contact-item"><span class="icone-local"></span> Rua Augusta, 2000 - Consolação, São Paulo - SP, 01304-000</li>
                     </ul>
@@ -1151,7 +1171,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                &copy; 2025 Cigarro Eletrônico Shop. Todos os direitos reservados.
+                &copy; 2025 Cigarro Eletrônico Online. Todos os direitos reservados.
             </div>
         </div>
     </footer>
@@ -1215,7 +1235,7 @@
                 "Pod Nibbar 8000 Puffs": "https://pay.marketplacetransacaosegura.com/checkout/f2294027-f523-40ce-ae35-6c6d869ec697",
                 "NPOD Nibbar Pod System (Bateria + 2 Refil)": "https://pay.marketplacetransacaosegura.com/checkout/90079ed7-89a8-41f4-a2be-ca1fac963b26",
                 "Pod Descartável Nasty 5K Crystal 5000 Puffs": "https://pay.marketplacetransacaosegura.com/checkout/3ed580b3-4281-4233-953f-9c28e0b37586",
-                "Pod Descartável HAKD 8000 Puffs": "https://pay.marketplacetransacaosegura.com/checkout/0d11dd13-ba90-4e4b-88ad-7c839d22f0b7"
+                "Pod Descartável HAKD 8000 Puffs": "https://pay.marketplacetansacaosegura.com/checkout/0d11dd13-ba90-4e4b-88ad-7c839d22f0b7"
             };
 
             // Funcionalidade da galeria de miniaturas
