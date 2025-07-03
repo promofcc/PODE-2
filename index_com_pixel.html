@@ -1,0 +1,1399 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pod Descartável Ignite V50 5000 Puffs - Cigarro Eletrônico Online</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-green: #4CAF50;
+            --dark-green: #388E3C;
+            --light-gray: #f2f2f2;
+            --medium-gray: #ccc;
+            --dark-gray: #333;
+            --text-color: #555;
+            --price-red: #ff0000;
+            --button-blue: #007bff;
+            --button-blue-hover: #0056b3;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #f9f9f9;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Top Bar */
+        .top-bar {
+            background-color: black;
+            color: #fff;
+            text-align: center;
+            padding: 8px 0;
+            font-size: 0.9em;
+        }
+
+        /* Header */
+        .header {
+            background-color: #fff;
+            border-bottom: 1px solid var(--light-gray);
+            padding: 15px 0;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap; /* Allow wrapping for responsiveness */
+            gap: 15px; /* Spacing between items */
+        }
+
+        .header-left {
+            display: flex;
+            flex-direction: column; /* Stack logo and badges */
+            align-items: flex-start; /* Align them to the start */
+            gap: 8px; /* Space between logo and badges */
+            flex-shrink: 0;
+        }
+
+        .header-logo {
+            font-size: 1.8em;
+            font-weight: 700;
+            color: var(--dark-gray);
+            white-space: nowrap;
+        }
+
+        .site-credibility-badges {
+            display: flex;
+            gap: 15px;
+            font-size: 0.85em;
+            color: var(--text-color);
+            flex-wrap: wrap;
+        }
+
+        .credibility-badge {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            padding: 4px 8px;
+            background-color: var(--light-gray);
+            border-radius: 4px;
+            font-weight: 500;
+        }
+
+        .search-bar {
+            flex-grow: 1;
+            margin: 0 20px; /* Adjusted margin */
+            display: flex;
+            justify-content: center;
+            min-width: 200px; /* Ensure search bar is not too small */
+        }
+
+        .search-bar input {
+            width: 100%;
+            max-width: 500px;
+            padding: 10px 15px;
+            border: 1px solid var(--medium-gray);
+            border-radius: 5px;
+            font-size: 1em;
+            outline: none;
+        }
+
+        .header-icons {
+            display: flex;
+            gap: 20px;
+            font-size: 1.2em;
+            flex-shrink: 0; /* Prevent shrinking */
+        }
+
+        .header-icons span {
+            cursor: pointer;
+        }
+
+        /* Navigation Menu */
+        .nav-menu {
+            background-color: var(--light-gray);
+            padding: 10px 0;
+            border-bottom: 1px solid var(--medium-gray);
+        }
+
+        .nav-list {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            font-weight: 500;
+            font-size: 0.95em;
+            flex-wrap: wrap; /* Allow wrapping for responsiveness */
+        }
+
+        .nav-list a {
+            padding: 5px 0;
+            position: relative;
+            color: var(--dark-gray);
+        }
+
+        .nav-list a:hover {
+            color: var(--primary-green);
+        }
+
+        /* Product Page */
+        .product-page {
+            display: flex;
+            gap: 40px;
+            padding: 40px 0;
+            flex-wrap: wrap;
+            justify-content: center; /* Center content when it wraps */
+        }
+
+        .product-gallery {
+            flex: 1;
+            min-width: 300px;
+            max-width: 500px; /* Added max-width for better control */
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center; /* Center items in column */
+        }
+
+        .thumbnails {
+            display: flex;
+            flex-direction: row; /* Changed to row for horizontal thumbnails */
+            flex-wrap: wrap; /* Allow wrapping if many thumbnails */
+            justify-content: center; /* Center thumbnails */
+            gap: 10px;
+            width: 100%; /* Take full width of parent */
+        }
+
+        .thumbnail-item {
+            width: 70px;
+            height: 70px;
+            border: 1px solid var(--medium-gray);
+            border-radius: 5px;
+            overflow: hidden;
+            cursor: pointer;
+            flex-shrink: 0; /* Prevent shrinking */
+        }
+
+        .thumbnail-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .main-image {
+            flex-grow: 1;
+            width: 100%; /* Take full width of parent */
+            border: 1px solid var(--light-gray);
+            border-radius: 8px;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #fff;
+            min-height: 300px; /* Ensure a minimum height */
+        }
+
+        .main-image img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .product-info {
+            flex: 1.5;
+            min-width: 300px; /* Adjusted min-width for smaller screens */
+            max-width: 600px; /* Added max-width for better control */
+            text-align: left; /* Align text to the left */
+        }
+
+        .product-info h1 {
+            font-size: 1.8em;
+            margin-bottom: 10px;
+            color: var(--dark-gray);
+        }
+
+        .product-info .price-original {
+            text-decoration: line-through;
+            color: var(--medium-gray);
+            font-size: 1.1em;
+        }
+
+        .product-info .price-promo {
+            font-size: 2.2em;
+            color: var(--primary-green);
+            font-weight: 700;
+            margin: 5px 0;
+        }
+
+        .product-info .economy {
+            color: var(--primary-green);
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+
+        .product-info .flavor-select label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .product-info .flavor-select select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid var(--medium-gray);
+            border-radius: 5px;
+            font-size: 1em;
+            margin-bottom: 20px;
+            background-color: #fff;
+            appearance: none;
+            -webkit-appearance: none;
+            background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20256%20512%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M252.8%20228.6L128%20353.4%203.2%20228.6C-1.1%20224.4%200%20217.6%200%20212.8V208c0-8.8%207.2-16%2016-16h224c8.8%200%2016%207.2%2016%2016v4.8c0%204.8-1.1%2011.6-5.4%2015.8z%22%2F%3E%3C%2Fsvg%3E');
+            background-repeat: no-repeat;
+            background-position: right 15px center;
+            background-size: 12px;
+        }
+
+        .product-actions {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            justify-content: center; /* Center buttons */
+        }
+
+        .product-actions .buy-button {
+            flex: 1;
+            min-width: 200px; /* Ensure button is not too small */
+            padding: 15px 25px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1em;
+            font-weight: 700;
+            cursor: pointer;
+            text-align: center;
+            white-space: nowrap;
+        }
+
+        .product-actions .buy-button:hover {
+            background-color: var(--button-blue-hover);
+        }
+
+        /* New style for more products call to action */
+        .more-products-call-to-action-link {
+            display: block; /* Make it a block element to fill the space */
+            text-align: center;
+            margin-top: 30px;
+            padding: 15px;
+            background-color: #e6f7ff; /* Light blue background */
+            border: 1px solid var(--button-blue);
+            border-radius: 8px;
+            font-size: 1.1em;
+            font-weight: 600;
+            color: var(--button-blue);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .more-products-call-to-action-link:hover {
+            background-color: #cce7f0; /* Slightly darker blue on hover */
+            transform: translateY(-2px); /* Subtle lift effect */
+        }
+
+        /* Product Description Tabs */
+        .product-tabs {
+            border-bottom: 1px solid var(--medium-gray);
+            margin-top: 40px;
+            display: flex;
+            justify-content: center; /* Center tabs */
+            flex-wrap: wrap; /* Allow wrapping */
+        }
+
+        .tab-button {
+            padding: 15px 25px;
+            cursor: pointer;
+            font-weight: 500;
+            color: var(--medium-gray);
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .tab-button.active {
+            color: var(--dark-gray);
+            border-bottom-color: var(--primary-green);
+            font-weight: 700;
+        }
+
+        .tab-content {
+            padding: 30px 0;
+            text-align: left; /* Align text to the left */
+        }
+
+        .tab-content h2, .tab-content h3 {
+            text-align: center; /* Center headings within content */
+            margin-bottom: 20px;
+        }
+
+        .tab-content p {
+            margin-bottom: 15px;
+            line-height: 1.8;
+            max-width: 800px; /* Limit paragraph width for readability */
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .tab-content ul {
+            list-style: none;
+            margin-bottom: 20px;
+            max-width: 800px; /* Limit list width */
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 20px; /* Add some padding for list items */
+        }
+
+        .tab-content ul li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 10px;
+        }
+
+        .tab-content ul li::before {
+            content: '✓'; /* Placeholder for checkmark icon */
+            position: absolute;
+            left: 0;
+            color: var(--primary-green);
+            font-weight: bold;
+        }
+
+        .specs-table {
+            width: 100%;
+            max-width: 600px; /* Limit table width */
+            margin: 20px auto; /* Center table */
+            border-collapse: collapse;
+        }
+
+        .specs-table th,
+        .specs-table td {
+            border: 1px solid var(--light-gray);
+            padding: 12px;
+            text-align: left;
+        }
+
+        .specs-table th {
+            background-color: var(--light-gray);
+            font-weight: 500;
+            color: var(--dark-gray);
+        }
+
+        /* New styles for tab panes and reviews */
+        .tab-pane {
+            display: none; /* Hidden by default */
+        }
+
+        .tab-pane.active {
+            display: block; /* Shown when active */
+        }
+
+        .review-item {
+            background-color: #fefefe;
+            border: 1px solid var(--light-gray);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: left;
+        }
+
+        .review-author {
+            font-weight: 700;
+            color: var(--dark-gray);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .review-text {
+            font-style: italic;
+            color: var(--text-color);
+        }
+        /* End new styles for tab panes and reviews */
+
+        /* Related Products */
+        .related-products {
+            padding: 40px 0;
+            background-color: #f0f0f0;
+            text-align: center;
+        }
+
+        .related-products h2 {
+            font-size: 2em;
+            margin-bottom: 30px;
+            color: var(--dark-gray);
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            justify-items: center; /* Center grid items */
+        }
+
+        .product-card {
+            background-color: #fff;
+            border: 1px solid var(--light-gray);
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+            width: 100%; /* Ensure card takes full width of its grid column */
+            max-width: 300px; /* Limit individual card width */
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-card-image {
+            height: 180px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .product-card-image img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .product-card h3 {
+            font-size: 1.1em;
+            margin-bottom: 10px;
+            color: var(--dark-gray);
+        }
+
+        .product-card .price-original {
+            text-decoration: line-through;
+            color: var(--medium-gray);
+            font-size: 0.95em;
+        }
+
+        .product-card .price-promo {
+            font-size: 1.3em;
+            color: var(--primary-green);
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .product-card .card-actions .buy-button-related {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            font-weight: 500;
+            cursor: pointer;
+            background-color: var(--button-blue);
+            color: white;
+            width: 100%; /* Make button full width of card */
+        }
+
+        .product-card .card-actions .buy-button-related:hover {
+            background-color: var(--button-blue-hover);
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--dark-gray);
+            color: #f2f2f2;
+            padding: 40px 0 20px;
+            font-size: 0.9em;
+        }
+
+        .footer-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start; /* Align items to the start for better vertical flow */
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            gap: 30px; /* Increased gap for better separation */
+        }
+
+        .newsletter, .footer-logo-description, .footer-links, .footer-contact, .footer-security-payment {
+            flex: 1;
+            min-width: 200px; /* Ensure minimum width for columns */
+            max-width: 280px; /* Limit max width for columns */
+        }
+
+        .newsletter form {
+            display: flex;
+            width: 100%;
+        }
+
+        .newsletter input {
+            flex-grow: 1;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px 0 0 5px;
+            outline: none;
+            background-color: #fff;
+            color: var(--dark-gray);
+        }
+
+        .newsletter button {
+            padding: 10px 20px;
+            background-color: var(--button-blue);
+            color: #fff;
+            border: none;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        .footer-logo-description .footer-logo {
+            font-size: 1.5em;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        .footer-links h4,
+        .footer-contact h4,
+        .footer-security-payment h4 {
+            font-size: 1.1em;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+
+        .footer-links ul li,
+        .footer-contact ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-contact .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .security-seals,
+        .payment-methods {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: flex-start; /* Align to start for smaller screens */
+            width: 100%; /* Take full width of parent */
+        }
+
+        .security-seals div,
+        .payment-methods div {
+            width: 80px; /* Placeholder size for logos */
+            height: 40px;
+            background-color: #555;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 4px;
+            font-size: 0.8em;
+            text-align: center;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #555;
+            color: #aaa;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                align-items: center; /* Center items in column */
+            }
+
+            .search-bar {
+                margin: 0;
+                width: 100%;
+            }
+
+            .nav-list {
+                flex-direction: column;
+                align-items: center; /* Center stacked items */
+                gap: 10px;
+            }
+
+            .product-page {
+                flex-direction: column;
+                align-items: center; /* Center product section */
+            }
+
+            .product-gallery,
+            .product-info {
+                min-width: unset;
+                width: 95%; /* Adjust width for better mobile fit */
+                max-width: 100%; /* Remove max-width on smaller screens */
+            }
+
+            .product-actions {
+                flex-direction: column;
+                width: 100%; /* Full width for buttons */
+            }
+
+            .product-actions .buy-button {
+                width: 100%;
+            }
+
+            .tab-button {
+                padding: 15px 15px;
+            }
+
+            .footer-top {
+                flex-direction: column;
+                align-items: center; /* Center footer columns */
+                text-align: center;
+            }
+
+            .newsletter, .footer-logo-description, .footer-links, .footer-contact, .footer-security-payment {
+                min-width: unset;
+                width: 95%; /* Adjust width for better mobile fit */
+                max-width: 100%; /* Remove max-width on smaller screens */
+            }
+
+            .newsletter form {
+                justify-content: center; /* Center newsletter form */
+            }
+
+            .security-seals,
+            .payment-methods {
+                justify-content: center; /* Center payment/security logos */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+            .modal-content {
+                padding: 20px;
+            }
+        }
+
+        /* Placeholder icons */
+        .icone-user::before { content: '👤'; }
+        .icone-carrinho::before { content: '🛒'; }
+        .icone-mail::before { content: '✉️'; }
+        .icone-local::before { content: '📍'; }
+
+        /* Modal Styles */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1000; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgba(0,0,0,0.6); /* Black w/ opacity */
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: #f0f0f0; /* Tonalidade suave de cinza */
+            margin: auto;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            width: 90%;
+            max-width: 500px;
+            position: relative;
+            animation-name: animatetop;
+            animation-duration: 0.4s
+        }
+
+        @keyframes animatetop {
+            from {top: -300px; opacity: 0}
+            to {top: 0; opacity: 1}
+        }
+
+        .close-button {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            cursor: pointer;
+        }
+
+        .close-button:hover,
+        .close-button:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .modal-content h2 {
+            margin-bottom: 20px;
+            color: var(--dark-gray);
+            font-size: 1.5em;
+            text-align: center; /* Center modal heading */
+        }
+
+        #productSummaryInfo {
+            font-size: 1.1em;
+            font-weight: 600;
+            color: var(--primary-green);
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .modal-content label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--text-color);
+        }
+
+        .modal-content input[type="text"],
+        .modal-content input[type="number"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid var(--medium-gray);
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        .modal-content button {
+            background-color: var(--primary-green);
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.1em;
+            font-weight: 600;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .modal-content button:hover {
+            background-color: var(--dark-green);
+        }
+
+        .delivery-info, .location-info {
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid var(--light-gray);
+            border-radius: 8px;
+            background-color: #e6ffe6; /* Light green background */
+            color: var(--dark-green);
+            font-weight: 500;
+            text-align: center;
+            display: none; /* Hidden by default */
+        }
+
+        .location-info {
+            background-color: #e6f7ff; /* Light blue background */
+            color: var(--button-blue);
+        }
+
+        #goToCheckoutButton {
+            background-color: var(--button-blue);
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.1em;
+            font-weight: 600;
+            width: 100%;
+            margin-top: 20px; /* Adicionado margem para separar */
+            display: none; /* Hidden by default */
+        }
+
+        #goToCheckoutButton:hover {
+            background-color: var(--button-blue-hover);
+        }
+
+        #mapContainer {
+            width: 100%;
+            height: 200px;
+            background-color: #e0e0e0; /* Placeholder for map */
+            border-radius: 8px;
+            margin-top: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #666;
+            font-style: italic;
+            text-align: center;
+        }
+    </style>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1219017279703919');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1219017279703919&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+
+</head>
+<body>
+
+    <header class="header">
+        <div class="top-bar">
+            APROVEITE O FRETE GRATIS PARA TODO BRASIL
+        </div>
+        <div class="container header-content">
+            <div class="header-left">
+                <div class="header-logo">cigarroeletronico.online</div>
+                <div class="site-credibility-badges">
+                    <span class="credibility-badge">✅ SITE SEGURO</span>
+                    <span class="credibility-badge">✅ PRODUTOS ORIGINAIS</span>
+                </div>
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Pesquisar produto...">
+            </div>
+            <div class="header-icons">
+                <span class="icone-user"></span>
+                <span class="icone-carrinho"></span>
+            </div>
+        </div>
+        <nav class="nav-menu">
+            <ul class="nav-list container">
+                <li><a href="#">POD DESCARTÁVEL</a></li>
+                <li><a href="#">POD RECARREGÁVEL</a></li>
+                <li><a href="#">E-LIQUID</a></li>
+                <li><a href="#">COILS & CARTUCHOS</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container product-page">
+        <section class="product-gallery">
+            <div class="thumbnails">
+                <!-- Miniaturas com URLs fornecidas pelo usuário -->
+                <div class="thumbnail-item"><img src="https://i.imgur.com/UkDlPib.jpeg" alt="Ignite V50 Thumbnail 1" onerror="this.onerror=null;this.src='https://placehold.co/70x70/cccccc/333333?text=Erro';"></div>
+                <div class="thumbnail-item"><img src="https://i.imgur.com/X1QQS3O.jpeg" alt="Ignite V50 Thumbnail 2" onerror="this.onerror=null;this.src='https://placehold.co/70x70/cccccc/333333?text=Erro';"></div>
+                <div class="thumbnail-item"><img src="https://i.imgur.com/pestkgQ.jpeg" alt="Ignite V50 Thumbnail 3" onerror="this.onerror=null;this.src='https://placehold.co/70x70/cccccc/333333?text=Erro';"></div>
+                <div class="thumbnail-item"><img src="https://i.imgur.com/7IwL8pA.jpeg" alt="Ignite V50 Thumbnail 4" onerror="this.onerror=null;this.src='https://placehold.co/70x70/cccccc/333333?text=Erro';"></div>
+                <div class="thumbnail-item"><img src="https://i.imgur.com/u9v6giH.jpeg" alt="Ignite V50 Thumbnail 5" onerror="this.onerror=null;this.src='https://placehold.co/70x70/cccccc/333333?text=Erro';"></div>
+                <div class="thumbnail-item"><img src="https://i.imgur.com/Jyqor4A.jpeg" alt="Ignite V50 Thumbnail 6" onerror="this.onerror=null;this.src='https://placehold.co/70x70/cccccc/333333?text=Erro';"></div>
+                <div class="thumbnail-item"><img src="https://i.imgur.com/uy2LICo.jpeg" alt="Ignite V50 Thumbnail 7" onerror="this.onerror=null;this.src='https://placehold.co/70x70/cccccc/333333?text=Erro';"></div>
+            </div>
+            <div class="main-image">
+                <!-- Imagem principal -->
+                <img id="mainProductImage" src="https://i.imgur.com/UkDlPib.jpeg" alt="Pod Descartável Ignite V50 5000 Puffs - Imagem Principal" onerror="this.onerror=null;this.src='https://placehold.co/600x400/cccccc/333333?text=Imagem+Nao+Carregada';this.alt='Imagem principal do produto não carregada';">
+            </div>
+        </section>
+
+        <section class="product-info">
+            <p>Home / Pod Descartável / Ignite / Pod Descartável Ignite V50 5000 Puffs - Todos os Sabores</p>
+            <h1>Pod Descartável Ignite V50 5000 Puffs – Todos os Sabores</h1>
+            <p class="price-original">R$89,90</p>
+            <p class="price-promo">R$59,90</p>
+            <p class="economy">Você economiza: R$30,00 (33%)</p>
+
+            <div class="flavor-select">
+                <label for="flavor">Selecione o Sabor:</label>
+                <select id="flavor" name="flavor">
+                    <option value="">Selecione...</option>
+                    <option value="grape-ice">Grape Ice</option>
+                    <option value="banana-ice">Banana Ice</option>
+                    <option value="blue-razz">Blue Razz</option>
+                    <option value="blueberry-ice">Blueberry Ice</option>
+                    <option value="lush-ice">Lush Ice</option>
+                    <option value="grape-apple">Grape Apple</option>
+                    <option value="kiwi-passion-fruit-guava">Kiwi Passion Fruit Guava</option>
+                    <option value="melon-ice">Melon Ice</option>
+                    <option value="menthol">Menthol</option>
+                    <option value="mixed-berries">Mixed Berries</option>
+                    <option value="peach-mango-watermelon">Peach Mango Watermelon</option>
+                    <option value="strawberry-banana">Strawberry Banana</option>
+                    <option value="strawberry-mango">Strawberry Mango</option>
+                    <option value="strawberry-watermelon">Strawberry Watermelon</option>
+                    <option value="watermelon-bubblegum">Watermelon Bubblegum</option>
+                </select>
+            </div>
+
+            <div class="product-actions">
+                <button class="buy-button"
+                        data-product-name="Pod Descartável Ignite V50 5000 Puffs"
+                        data-product-price="R$59,90">COMPRAR</button>
+                <!-- O botão "COMPRE VIA WHATSAPP" foi removido daqui -->
+            </div>
+            <!-- Adicionada chamada para mais produtos, agora clicável -->
+            <a href="#related-products" class="more-products-call-to-action-link">
+                Explore mais opções de produtos incríveis abaixo!
+            </a>
+
+            <!-- As opções de "CUPOM DE DESCONTO" e "CALCULE O FRETE COM SEU CEP" foram removidas daqui -->
+        </section>
+    </main>
+
+    <section class="container product-description">
+        <div class="product-tabs">
+            <button class="tab-button active">DESCRIÇÃO</button>
+            <button class="tab-button">INFORMAÇÃO ADICIONAL</button>
+            <button class="tab-button">AVALIAÇÕES (3)</button>
+        </div>
+
+        <div class="tab-content">
+            <div id="descriptionContent" class="tab-pane active">
+                <h2>Pod Descartável Ignite V50 5000 Puffs – Todos os Sabores</h2>
+                <p>Experimente o **Pod Descartável Ignite V50 5000 Puffs**, com design moderno e desempenho excepcional. Oferece até 5000 vaporadas suaves e cheias de sabor, para uma experiência prolongada e satisfatória.</p>
+
+                <p>Com 12ml de e-líquido premium e bateria de 650mAh, o Ignite V50 garante energia de sobra. Sua bobina de malha avançada entrega sabor puro e vapor abundante, destacando-o entre os vapes de 5000 puffs. Ideal para uma experiência de vaping sem complicações e com máxima qualidade.</p>
+
+                <h3>Benefícios:</h3>
+                <ul>
+                    <li>**Alternativa Mais Segura:** Reduz exposição a toxinas do cigarro tradicional.</li>
+                    <li>**Impacto Respiratório Reduzido:** Minimiza efeitos nocivos comparado ao tabagismo.</li>
+                    <li>**Auxílio na Cessação:** Ajuda na transição para abandonar o cigarro convencional.</li>
+                    <li>**Sem Fumaça Nociva:** Emite apenas vapor, eliminando fumo passivo.</li>
+                    <li>**Essências Certificadas:** E-líquidos de alta qualidade e certificação.</li>
+                </ul>
+
+                <h3>Características:</h3>
+                <ul>
+                    <li>**Design Compacto:** Leve e discreto, fácil de transportar.</li>
+                    <li>**Simplicidade:** Sem recargas, trocas de bobinas ou ajustes. Basta usar.</li>
+                    <li>**Sabor Intenso:** Sabor consistente do início ao fim.</li>
+                    <li>**Bateria Eficiente:** 650mAh para durabilidade prolongada.</li>
+                    <li>**Qualidade Premium:** Materiais robustos para uma experiência segura e satisfatória.</li>
+                </ul>
+
+                <h3>Teor de Nicotina e Puffs:</h3>
+                <p>O Pod Ignite V50 contém 50mg/ml de Nicotina Salt (5%), ideal para uma transição eficaz do cigarro tradicional. Com 5000 Puffs, oferece longa duração, sendo uma escolha econômica e prática.</p>
+                
+                <h3>Conteúdo da Embalagem:</h3>
+                <ul>
+                    <li>1x Pod Ignite V50 5000 Puffs</li>
+                </ul>
+
+                <h3>Especificações Técnicas:</h3>
+                <table class="specs-table">
+                    <tr>
+                        <th>Teor de Nicotina:</th>
+                        <td>50mg/ml (5%)</td>
+                    </tr>
+                    <tr>
+                        <th>Quantidade de Puffs:</th>
+                        <td>5000 Puffs</td>
+                    </tr>
+                    <tr>
+                        <th>Capacidade de E-liquid:</th>
+                        <td>12ml</td>
+                    </tr>
+                    <tr>
+                        <th>Capacidade da Bateria:</th>
+                        <td>650mAh (Não recarregável)</td>
+                    </tr>
+                </table>
+
+                <h3>Como Usar:</h3>
+                <p>Remova da embalagem, retire as proteções do bocal e fluxo de ar. Basta inalar para ativar. Sem botões ou ajustes complicados.</p>
+
+                <h3>Cuidados e Recomendações:</h3>
+                <ul>
+                    <li>**Ambiente:** Evite locais úmidos ou com muita poeira.</li>
+                    <li>**Extremos:** Mantenha longe da luz solar direta e calor excessivo.</li>
+                    <li>**Não Desmonte:** Para sua segurança, não tente desmontar.</li>
+                    <li>**Descarte:** Descarte de forma responsável.</li>
+                </ul>
+
+                <h3>Informações Importantes:</h3>
+                <p>Produto de uso único e não recarregável. Mantenha fora do alcance de crianças e animais. Destinado a maiores de 18 anos. Consulte um médico antes de usar se estiver grávida, amamentando ou com condições médicas. Não use se o lacre estiver violado. Após aberto, o produto não poderá ser trocado ou devolvido.</p>
+
+                <h3>Garantia:</h3>
+                <p>Na Cigarro Eletrônico Shop, garantimos 100% a originalidade e autenticidade dos produtos. Garantia de 7 dias contra defeitos de fabricação.</p>
+            </div>
+
+            <div id="additionalInfoContent" class="tab-pane">
+                <h2>Informações Adicionais</h2>
+                <p>O Pod Descartável Ignite V50 5000 Puffs é fabricado com altos padrões de qualidade pela Ignite, marca globalmente reconhecida por inovação e performance. Para melhor experiência, siga as recomendações de uso e armazenamento. Nossa equipe está à disposição para suporte.</p>
+            </div>
+
+            <div id="reviewsContent" class="tab-pane">
+                <h2>Avaliações de Clientes</h2>
+                <h3>O que nossos clientes dizem sobre o Pod Descartável Ignite V50:</h3>
+                <div class="review-item">
+                    <p class="review-author">⭐⭐⭐⭐⭐ por Ana S.</p>
+                    <p class="review-text">"Pode comprar sem medo! Chegou super rápido e o produto é 100% original. Confiança total na Cigarro Eletrônico Shop!"</p>
+                </div>
+                <div class="review-item">
+                    <p class="review-author">⭐⭐⭐⭐⭐ por Carlos M.</p>
+                    <p class="review-text">"Extremamente satisfeito! O Ignite V50 é incrível e a entrega foi muito eficiente, dentro do prazo de 5 dias úteis. Recomendo a todos!"</p>
+                </div>
+                <div class="review-item">
+                    <p class="review-author">⭐⭐⭐⭐⭐ por Beatriz L.</p>
+                    <p class="review-text">"Minha primeira compra aqui e já virei cliente fiel. O site é super confiável e a entrega foi antes do esperado. O Pod Ignite V50 é perfeito! Parabéns à equipe!"</p>
+                </div>
+                <!-- Você pode adicionar mais avaliações aqui -->
+            </div>
+        </div>
+    </section>
+
+    <section id="related-products" class="related-products">
+        <div class="container">
+            <h2>Produtos relacionados</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-card-image">
+                        
+                        <img src="https://i.imgur.com/vGhQ6sI.jpeg" alt="Pod Nibbar 8000 Puffs">
+                    </div>
+                    <h3>Pod Nibbar 8000 Puffs</h3>
+                    <p class="price-original">R$109,90</p>
+                    <p class="price-promo">R$79,90</p>
+                    <div class="card-actions">
+                        <button class="buy-button-related"
+                                data-product-name="Pod Nibbar 8000 Puffs"
+                                data-product-price="R$79,90">COMPRAR</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-card-image">
+                        
+                        <img src="https://i.imgur.com/0xu5z7V.jpeg" alt="NPOD Nibbar Pod System">
+                    </div>
+                    <h3>NPOD Nibbar Pod System (Bateria + 2 Refil)</h3>
+                    <p class="price-original">R$99,90</p>
+                    <p class="price-promo">R$59,90</p>
+                    <div class="card-actions">
+                        <button class="buy-button-related"
+                                data-product-name="NPOD Nibbar Pod System (Bateria + 2 Refil)"
+                                data-product-price="R$59,90">COMPRAR</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-card-image">
+                        
+                        <img src="https://i.imgur.com/tKeVnLq.jpeg" alt="Pod Descartável Nasty 5K Crystal 5000 Puffs">
+                    </div>
+                    <h3>Pod Descartável Nasty 5K Crystal 5000 Puffs</h3>
+                    <p class="price-original">R$89,90</p>
+                    <p class="price-promo">R$59,90</p>
+                    <div class="card-actions">
+                        <button class="buy-button-related"
+                                data-product-name="Pod Descartável Nasty 5K Crystal 5000 Puffs"
+                                data-product-price="R$59,90">COMPRAR</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-card-image">
+                        
+                        <img src="https://i.imgur.com/6PV42VV.jpeg" alt="Pod Descartável HAKD 8000 Puffs">
+                    </div>
+                    <h3>Pod Descartável HAKD 8000 Puffs</h3>
+                    <p class="price-original">R$149,90</p>
+                    <p class="price-promo">R$99,90</p>
+                    <div class="card-actions">
+                        <button class="buy-button-related"
+                                data-product-name="Pod Descartável HAKD 8000 Puffs"
+                                data-product-price="R$99,90">COMPRAR</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="newsletter">
+                    <h4>CADASTRE-SE EM NOSSA NEWSLETTER</h4>
+                    <p>Receba todas as nossas promoções e novidades diretamente no seu e-mail!</p>
+                    <form>
+                        <input type="email" placeholder="Seu e-email">
+                        <button type="submit">ASSINAR</button>
+                    </form>
+                </div>
+                <div class="footer-logo-description">
+                    <div class="footer-logo">cigarroeletronico.online</div>
+                    <p>Sua loja de confiança para cigarros eletrônicos e acessórios.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>LINKS ÚTEIS</h4>
+                    <ul>
+                        <li><a href="#">Sobre Nós</a></li>
+                        <li><a href="#">Contato</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Política de Troca</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>CONTATO</h4>
+                    <ul>
+                        <li class="contact-item"><span class="icone-mail"></span> contato@cigarroeletronico.online</li>
+                        <li class="contact-item"><span class="icone-whatsapp"></span> (11) 98765-4321</li>
+                        <li class="contact-item"><span class="icone-local"></span> Rua Augusta, 2000 - Consolação, São Paulo - SP, 01304-000</li>
+                    </ul>
+                </div>
+                <div class="footer-security-payment">
+                    <h4>SEGURANÇA E PAGAMENTO</h4>
+                    <div class="security-seals">
+                        <div>Selo SSL</div>
+                        <div>Site Seguro</div>
+                    </div>
+                    <div class="payment-methods">
+                        <div>Visa</div>
+                        <div>Mastercard</div>
+                        <div>Pix</div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2025 Cigarro Eletrônico Online. Todos os direitos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal de Endereço -->
+    <div id="addressModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Informações de Entrega</h2>
+            <div id="productSummaryInfo"></div> <!-- Novo div para exibir o nome do produto -->
+            <form id="addressForm">
+                <label for="street">Rua:</label>
+                <input type="text" id="street" placeholder="Ex: Rua das Flores" required>
+
+                <label for="number">Número:</label>
+                <input type="text" id="number" placeholder="Ex: 123" required>
+
+                <label for="neighborhood">Bairro:</label>
+                <input type="text" id="neighborhood" placeholder="Ex: Centro" required>
+
+                <label for="city">Cidade:</label>
+                <input type="text" id="city" placeholder="Ex: São Paulo" required>
+
+                <label for="state">Estado:</label>
+                <input type="text" id="state" placeholder="Ex: SP" maxlength="2" required>
+
+                <label for="zipcode">CEP:</label>
+                <input type="number" id="zipcode" placeholder="Ex: 12345-678" required>
+
+                <button type="submit">Confirmar Endereço</button>
+            </form>
+            <div id="deliveryInfo" class="delivery-info"></div>
+            <div id="locationInfo" class="location-info"></div>
+            <div id="mapContainer"></div> <!-- O conteúdo será adicionado via JS -->
+            <button id="goToCheckoutButton">Ir para o Checkout</button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mainImage = document.getElementById('mainProductImage');
+            const thumbnails = document.querySelectorAll('.thumbnail-item img');
+            const allBuyButtons = document.querySelectorAll('.buy-button, .buy-button-related');
+
+            const addressModal = document.getElementById('addressModal');
+            const closeButton = document.querySelector('.close-button');
+            const addressForm = document.getElementById('addressForm');
+            const deliveryInfo = document.getElementById('deliveryInfo');
+            const locationInfo = document.getElementById('locationInfo');
+            const mapContainer = document.getElementById('mapContainer');
+            const goToCheckoutButton = document.getElementById('goToCheckoutButton');
+            const productSummaryInfo = document.getElementById('productSummaryInfo');
+
+            // Variáveis para armazenar o produto selecionado
+            let currentProductName = '';
+            let currentProductPrice = '';
+
+            // Objeto para mapear nomes de produtos a URLs de checkout
+            const productCheckoutUrls = {
+                "Pod Descartável Ignite V50 5000 Puffs": "https://pay.marketplacetransacaosegura.com/checkout/eb1e66f7-fe2e-48f3-98a7-af6054da2150",
+                "Pod Nibbar 8000 Puffs": "https://pay.marketplacetransacaosegura.com/checkout/f2294027-f523-40ce-ae35-6c6d869ec697",
+                "NPOD Nibbar Pod System (Bateria + 2 Refil)": "https://pay.marketplacetransacaosegura.com/checkout/90079ed7-89a8-41f4-a2be-ca1fac963b26",
+                "Pod Descartável Nasty 5K Crystal 5000 Puffs": "https://pay.marketplacetransacaosegura.com/checkout/3ed580b3-4281-4233-953f-9c28e0b37586",
+                "Pod Descartável HAKD 8000 Puffs": "https://pay.marketplacetansacaosegura.com/checkout/0d11dd13-ba90-4e4b-88ad-7c839d22f0b7"
+            };
+
+            // Funcionalidade da galeria de miniaturas
+            thumbnails.forEach(thumbnail => {
+                thumbnail.addEventListener('click', function() {
+                    mainImage.src = this.src;
+                    mainImage.alt = this.alt;
+                });
+            });
+
+            // Função para carregar o endereço salvo
+            function loadSavedAddress() {
+                const savedAddress = localStorage.getItem('savedAddress');
+                if (savedAddress) {
+                    const address = JSON.parse(savedAddress);
+                    document.getElementById('street').value = address.street || '';
+                    document.getElementById('number').value = address.number || '';
+                    document.getElementById('neighborhood').value = address.neighborhood || '';
+                    document.getElementById('city').value = address.city || '';
+                    document.getElementById('state').value = address.state || '';
+                    document.getElementById('zipcode').value = address.zipcode || '';
+                }
+            }
+
+            // Abrir o modal ao clicar em QUALQUER botão de COMPRAR
+            allBuyButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    currentProductName = this.getAttribute('data-product-name'); // Armazena o nome
+                    currentProductPrice = this.getAttribute('data-product-price'); // Armazena o preço
+
+                    productSummaryInfo.textContent = `Comprando: ${currentProductName} (${currentProductPrice})`;
+                    addressModal.style.display = 'flex';
+                    deliveryInfo.style.display = 'none';
+                    locationInfo.style.display = 'none';
+                    mapContainer.style.display = 'none';
+                    mapContainer.innerHTML = '';
+                    goToCheckoutButton.style.display = 'none';
+                    addressForm.reset();
+                    loadSavedAddress();
+
+                    // DEBUG: Log quando um botão de compra é clicado
+                    console.log('Botão COMPRAR clicado. Produto:', currentProductName, 'Preço:', currentProductPrice);
+                });
+            });
+
+            // Fechar o modal ao clicar no X
+            closeButton.addEventListener('click', function() {
+                addressModal.style.display = 'none';
+            });
+
+            // Fechar o modal ao clicar fora dele
+            window.addEventListener('click', function(event) {
+                if (event.target == addressModal) {
+                    addressModal.style.display = 'none';
+                }
+            });
+
+            // Lidar com o envio do formulário de endereço
+            addressForm.addEventListener('submit', function(event) {
+                event.preventDefault();
+
+                const street = document.getElementById('street').value;
+                const number = document.getElementById('number').value;
+                const neighborhood = document.getElementById('neighborhood').value;
+                const city = document.getElementById('city').value;
+                const state = document.getElementById('state').value;
+                const zipcode = document.getElementById('zipcode').value;
+
+                // Salvar o endereço no localStorage
+                const addressToSave = { street, number, neighborhood, city, state, zipcode };
+                localStorage.setItem('savedAddress', JSON.stringify(addressToSave));
+
+                // Simular confirmação de endereço e entrega
+                deliveryInfo.textContent = `Endereço confirmado: ${street}, ${number}, ${neighborhood}, ${city}-${state}, CEP: ${zipcode}. Entrega em até 5 dias úteis!`;
+                deliveryInfo.style.display = 'block';
+
+                // Ocultar informações de localização e mapa
+                locationInfo.style.display = 'none';
+                mapContainer.style.display = 'none';
+                mapContainer.innerHTML = ''; // Limpa o conteúdo do mapa
+                goToCheckoutButton.style.display = 'block'; // Garante que o botão de checkout apareça
+                
+                // DEBUG: Log do endereço confirmado
+                console.log('Endereço confirmado:', addressToSave);
+            });
+
+            // Lidar com o clique no botão "Ir para o Checkout"
+            goToCheckoutButton.addEventListener('click', function() {
+                // Busca o URL de checkout no objeto productCheckoutUrls usando o nome do produto atual
+                const checkoutUrl = productCheckoutUrls[currentProductName];
+
+                // DEBUG: Log do URL de checkout que será usado
+                console.log('Tentando redirecionar para:', checkoutUrl);
+
+                if (checkoutUrl) {
+                    // Tenta abrir em uma nova aba para evitar bloqueios de iframe em alguns ambientes
+                    window.open(checkoutUrl, '_blank'); 
+                    // window.location.href = checkoutUrl; // Comentado para tentar nova aba
+                } else {
+                    // Mensagem para o caso de o URL de checkout não estar definido para o produto
+                    alert(`URL de checkout não configurado para: ${currentProductName}. Por favor, configure no código.`);
+                    console.error(`Erro: URL de checkout não encontrado para o produto: ${currentProductName}`);
+                }
+                addressModal.style.display = 'none'; // Fecha o modal
+            });
+
+            // Lógica para alternar entre as abas (Descrição, Informação Adicional, Avaliações)
+            const tabButtons = document.querySelectorAll('.product-tabs .tab-button');
+            const tabPanes = document.querySelectorAll('.tab-content .tab-pane');
+
+            tabButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove a classe 'active' de todos os botões e painéis de aba
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    tabPanes.forEach(pane => pane.classList.remove('active'));
+
+                    // Adiciona a classe 'active' ao botão clicado
+                    this.classList.add('active');
+
+                    // Determina qual conteúdo de aba mostrar com base no texto do botão
+                    let targetPaneId;
+                    if (this.textContent.includes('DESCRIÇÃO')) {
+                        targetPaneId = 'descriptionContent';
+                    } else if (this.textContent.includes('INFORMAÇÃO ADICIONAL')) {
+                        targetPaneId = 'additionalInfoContent';
+                    } else if (this.textContent.includes('AVALIAÇÕES')) {
+                        targetPaneId = 'reviewsContent';
+                    }
+
+                    // Mostra o conteúdo da aba correspondente
+                    const targetPane = document.getElementById(targetPaneId);
+                    if (targetPane) {
+                        targetPane.classList.add('active');
+                    }
+                });
+            });
+
+            // Define a aba inicial ativa (Descrição)
+            document.getElementById('descriptionContent').classList.add('active');
+        });
+    </script>
+</body>
+</html>
